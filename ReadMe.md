@@ -5,15 +5,15 @@ Usage:
 This is what you will encounter when running this code
 
 
-Enter the title: (Title)
+Enter the title: (Title) Hi
 
-Enter the main message: (Body)
+Enter the main message: (Body) Hello this is the code
 
-Do you want to have this event take place today or tmmr?: (you can choose today or tmmr)
+Do you want to have this event take place today or tmmr?: (you can choose today or tmmr) today
 
-Enter the time and the time of day exp.(09:45pm): (The time you want this code to be activated by)
+Enter the time and the time of day exp.(09:45pm): (The time you want this code to be activated by) 3:45pm
 
-15:35 (The time the code will be activited, and yes it switches to military time)
+15:45 (The time the code will be activited, and yes it switches to military time)
 
 
 Requirements: 
