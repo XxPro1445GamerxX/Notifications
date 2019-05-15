@@ -80,7 +80,7 @@ try:
         #quits the app after the msg's are sent
         sys.exit()
     def inputer():
-        all_ = input('Enter the time and the time of day exp.(09:45pm):').lower()
+        all_ = input('Enter the time and the time of day exp.(0:45pm):').lower()
         hour = (all_[0])
         if int(hour) > 0:
             hour = (all_[0])
