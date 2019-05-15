@@ -1,13 +1,20 @@
-This code is really helpful
+This code is really helpful and hopeful you think the same!
+
 Usage: 
 
-Enter the title: This is the code
-Enter the main message: HI
-Do you want to have this event take place today or tmmr?: today
-Enter the time and the time of day exp.(09:45pm):3:35pm
-15:35
-
 This is what you will encounter when running this code
+
+
+Enter the title: (Title)
+
+Enter the main message: (Body)
+
+Do you want to have this event take place today or tmmr?: (you can choose today or tmmr)
+
+Enter the time and the time of day exp.(09:45pm): (The time you want this code to be activated by)
+
+15:35 (The time the code will be activited, and yes it switches to military time)
+
 
 Requirements: 
 
@@ -22,12 +29,15 @@ Up to date:
 7. schedule
 
 If something is not up to date or not installed:
+
 python -m pip install (whatever)
 
 Not working:
 
 Make sure there are no spaced in between the time and the am or pm
+
 Make sure you spelled tmmr or tomorrow correct
+
 The content in the main msg and the title will not matter
 
 If all else fails and something is not working please leave it in the issue's tab and I will be sure to keep you updated as soon as possible!
