@@ -15,6 +15,8 @@ Enter the time and the time of day exp.(09:45pm): (The time you want this code t
 
 15:45 (The time the code will be activited, and yes it switches to military time)
 
+![](2019-05-15.png)
+
 
 Requirements: 
 
