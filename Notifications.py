@@ -5,6 +5,7 @@ import sys, os
 import struct
 import time
 import schedule
+
 class WindowsBalloonTip:
     def __init__(self, title, msg):
         message_map = {
@@ -48,22 +49,22 @@ def balloon_tip(title, msg):
 try:
     title = input('Enter the title: ').lower()
     mess = input('Enter the main message: ')
-    the_day = input('Do you want to have this event take place today or tmmr?: ')
-    if the_day == 'tmmr' or the_day == 'tomorrow':
-        curr = input('What day is it today exp.(monday)?: ').lower()
-        if curr == 'monday':
-            curr = 'tuesday'
-        elif curr == 'tuesday':
-            cur = 'wednesday'
-        elif curr == 'wednesday':
-            curr = 'thursday'
-        elif curr == 'thursay':
-            cur = 'friday'
-        elif curr == 'friday':
-            curr = 'saturday'
-        elif curr == 'saturday':
+    curr = input('Do you want to have this event take place today or tmmr?: ')
+    if curr == 'tmmr' or curr == 'tommorow':
+        new_time = time.ctime()
+        if 'Sat' in new_time:
             curr = 'sunday'
-        elif curr == 'sunday':
+        elif 'Mon' in new_time:
+            curr = 'tuesday'
+        elif 'Tues' in new_time:
+            curr = 'wednesday'
+        elif 'Wed' in new_time:
+            curr = 'thursday'
+        elif 'Thurs' in new_time:
+            curr = 'friday'
+        elif 'Fri' in new_time:
+            curr = 'saterday'
+        elif 'Sun' in new_time:
             curr = 'monday'
     else:
         curr = 'day'
@@ -80,6 +81,7 @@ try:
         #quits the app after the msg's are sent
         sys.exit()
     def inputer():
+        global curr
         all_ = input('Enter the time and the time of day exp.(9:45pm):').lower()
         hour = (all_[0])
         if int(hour) > 0:
@@ -87,8 +89,12 @@ try:
             minute = (all_[2])
             minute2 = (all_[3])
             colen = (all_[1])
-            pam = (all_[4])
-            pam2 = (all_[5])
+            try:
+                pam = (all_[4])
+                pam2 = (all_[5])
+            except:
+                pam = 'p'
+                pam2 = 'm'
         #Sorts into more genral catigories 
             hour = (hour)
             minute = (minute + minute2)
@@ -110,8 +116,29 @@ try:
             all1 = (hour + colen + minute)
             print(all1)
             # all1 is the hour colen and min put together so the schedule module will work
-            schedule.every().day.at(all1).do(runner)
-
+            if curr == 'day':
+                schedule.every().day.at(all1).do(runner)
+            elif curr == 'monday':
+                print(curr)
+                schedule.every().monday.at(all1).do(runner)
+            elif curr == 'sunday':
+                print(curr)
+                schedule.every().sunday.at(all1).do(runner)
+            elif curr == 'tuesday':
+                print(curr)
+                schedule.every().tuesday.at(all1).do(runner)
+            elif curr == 'wednesday':
+                print(curr)
+                schedule.every().wednesday.at(all1).do(runner)
+            elif curr == 'thursday':
+                print(curr)
+                schedule.every().thursday.at(all1).do(runner)
+            elif curr == 'friday':
+                print(curr)
+                schedule.every().friday.at(all1).do(runner)
+            elif curr == 'saterday':
+                print(curr)
+                schedule.every().saterday.at(all1).do(runner)
         else:
         #sorts into catigories
             hour = (all_[0])
@@ -119,8 +146,12 @@ try:
             minute = (all_[3])
             minute2 = (all_[4])
             colen = (all_[2])
-            pam = (all_[5])
-            pam2 = (all_[6])
+            try:
+                pam = (all_[5])
+                pam2 = (all_[6])
+            except:
+                pam = 'p'
+                pam2 = 'm'
         #Sorts into more genral catigories 
             hour = (hour + hour2)
             minute = (minute + minute2)
@@ -142,7 +173,29 @@ try:
             all1 = (hour + colen + minute)
             print(all1)
             # all1 is the hour colen and min put together so the schedule module will work
-            schedule.every().curr.at(all1).do(runner)
+            if curr == 'day':
+                schedule.every().day.at(all1).do(runner)
+            elif curr == 'monday':
+                print(curr)
+                schedule.every().monday.at(all1).do(runner)
+            elif curr == 'sunday':
+                print(curr)
+                schedule.every().sunday.at(all1).do(runner)
+            elif curr == 'tuesday':
+                print(curr)
+                schedule.every().tuesday.at(all1).do(runner)
+            elif curr == 'wednesday':
+                print(curr)
+                schedule.every().wednesday.at(all1).do(runner)
+            elif curr == 'thursday':
+                print(curr)
+                schedule.every().thursday.at(all1).do(runner)
+            elif curr == 'friday':
+                print(curr)
+                schedule.every().friday.at(all1).do(runner)
+            elif curr == 'saterday':
+                print(curr)
+                schedule.every().saterday.at(all1).do(runner)
         #Runs code
     inputer()
         #Runs the schedule and the time module
@@ -152,4 +205,4 @@ try:
 except ValueError:
     print('\nCheck That you put a valid time emp.(12:45pm)\n\nCommom error is you forgot the pm or am\n\nRestarting the program')
     inputer()
-        
+    
