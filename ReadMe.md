@@ -1,6 +1,12 @@
+**NOTE:
+
+THIS WILL OLNY WORK FOR WINDOWS
+
+OTHER:
+
 This code is really helpful and hopeful you think the same!
 
-Usage: 
+USAGE: 
 
 This is what you will encounter when running this code
 
