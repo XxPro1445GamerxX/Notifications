@@ -15,7 +15,7 @@ class WindowsBalloonTip:
         wc = WNDCLASS()
         hinst = wc.hInstance = GetModuleHandle(None)
         wc.lpszClassName = "PythonTaskbar"
-        wc.lpfnWndProc = message_map # could also specify a wndproc.
+        wc.lpfnWndProc = message_map 
         classAtom = RegisterClass(wc)
         # Create the Window.
         style = win32con.WS_OVERLAPPED | win32con.WS_SYSMENU
@@ -45,9 +45,9 @@ class WindowsBalloonTip:
         PostQuitMessage(0) # Terminate the app.
 def balloon_tip(title, msg):
     w=WindowsBalloonTip(msg, title)
-#Makes the message and title
+
 try:
-    title = input('Enter the title: ').lower()
+    title = input('Enter the title: ')
     mess = input('Enter the main message: ')
     curr = input('Do you want to have this event take place today or tmmr?: ')
     if curr == 'tmmr' or curr == 'tommorow':
@@ -174,27 +174,28 @@ try:
             print(all1)
             # all1 is the hour colen and min put together so the schedule module will work
             if curr == 'day':
+                print('This event will take place today!')
                 schedule.every().day.at(all1).do(runner)
             elif curr == 'monday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().monday.at(all1).do(runner)
             elif curr == 'sunday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().sunday.at(all1).do(runner)
             elif curr == 'tuesday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().tuesday.at(all1).do(runner)
             elif curr == 'wednesday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().wednesday.at(all1).do(runner)
             elif curr == 'thursday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().thursday.at(all1).do(runner)
             elif curr == 'friday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().friday.at(all1).do(runner)
             elif curr == 'saterday':
-                print(curr)
+                print('Event taking place '  + curr)
                 schedule.every().saterday.at(all1).do(runner)
         #Runs code
     inputer()
