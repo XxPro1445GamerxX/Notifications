@@ -1,6 +1,5 @@
 **NOTE**:
 
-UPDATE TO ME, fix the img to the new code
 
 THIS WILL OLNY WORK FOR WINDOWS
 
